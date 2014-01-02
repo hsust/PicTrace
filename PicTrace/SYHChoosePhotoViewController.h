@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SYHEditFirstViewController.h"
 
-@interface SYHChoosePhotoViewController : UIViewController
+@interface SYHChoosePhotoViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
+@property (strong, nonatomic) IBOutlet UIImageView* imageViewFirst;
+
+@property (strong, nonatomic) IBOutlet UIImageView* imageViewSecond;
+
+
+- (IBAction) chooseFirstPicture:(id) sender;
+- (IBAction) chooseSecondPicture:(id)sender;
+
+- (IBAction)dismissModal:(UIBarButtonItem *) sender;
+
+- (IBAction) prepareEditFirst:(id)sender;
+- (IBAction) prepareEditSecond:(id)sender;
 @end

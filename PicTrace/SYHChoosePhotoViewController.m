@@ -7,6 +7,7 @@
 //
 
 #import "SYHChoosePhotoViewController.h"
+#import "SYHEditFirstViewController.h"
 
 @interface SYHChoosePhotoViewController ()
 
@@ -14,18 +15,92 @@
 
 @implementation SYHChoosePhotoViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+int imageNum = 0;
+
+- (IBAction)dismissModal:(UIBarButtonItem *) sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    [self.navigationController popViewControllerAnimated:NO];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+-(IBAction) chooseFirstPicture:(id) sender
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    else
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    
+    imageNum = 1;
+    
+    [imagePicker setDelegate:self];
+    
+    [self presentModalViewController:imagePicker animated:YES];
+}
+
+
+-(IBAction) chooseSecondPicture:(id) sender
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    else
+    {
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    
+    imageNum = 2;
+    [imagePicker setDelegate:self];
+    
+    [self presentModalViewController:imagePicker animated:YES];
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker
+         didFinishPickingImage:(UIImage *)image
+                   editingInfo:(NSDictionary *)editingInfo
+{
+    NSLog(@"IMAGE DESCRIPTION: %@",image.description);
+    if (imageNum == 1) {
+        self.imageViewFirst.userInteractionEnabled = YES;
+        self.imageViewFirst.image = image;
+    }
+    else if (imageNum == 2) {
+        self.imageViewSecond.userInteractionEnabled = YES;
+        self.imageViewSecond.image = image;
+    }
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([[segue identifier] isEqualToString:@"First"]) {
+//        SYHEditFirstViewController *vc = [segue destinationViewController];
+//        [vc setImage:self.imageViewFirst.image];
+//    }
+//}
+
+-(IBAction) prepareEditFirst:(id)sender {
+    SYHEditFirstViewController *viewcontroller = [[SYHEditFirstViewController alloc] initWithNibName:@"SYHEditFirstViewController" bundle:nil];
+    [self presentViewController:viewcontroller animated:YES completion: nil];
+    [viewcontroller setImage:self.imageViewFirst.image];
+}
+
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    
 	// Do any additional setup after loading the view.
 }
 
@@ -34,5 +109,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

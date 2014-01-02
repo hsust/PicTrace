@@ -19,6 +19,10 @@
 		1B35EECF1867EC12004781FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B35EEB71867EC11004781FA /* UIKit.framework */; };
 		1B35EED71867EC12004781FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B35EED51867EC12004781FA /* InfoPlist.strings */; };
 		1B35EED91867EC12004781FA /* PicTraceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B35EED81867EC12004781FA /* PicTraceTests.m */; };
+		1B35EEE61867F0DE004781FA /* SYHMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B35EEE51867F0DE004781FA /* SYHMainViewController.m */; };
+		1B35EEE918682383004781FA /* SYHChoosePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B35EEE818682383004781FA /* SYHChoosePhotoViewController.m */; };
+		1B35EEEB186A5176004781FA /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B35EEEA186A5176004781FA /* Storyboard.storyboard */; };
+		1B35EEEE186D6127004781FA /* SYHEditFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B35EEED186D6127004781FA /* SYHEditFirstViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,13 @@
 		1B35EED41867EC12004781FA /* PicTraceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PicTraceTests-Info.plist"; sourceTree = "<group>"; };
 		1B35EED61867EC12004781FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B35EED81867EC12004781FA /* PicTraceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PicTraceTests.m; sourceTree = "<group>"; };
+		1B35EEE41867F0DE004781FA /* SYHMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHMainViewController.h; sourceTree = "<group>"; };
+		1B35EEE51867F0DE004781FA /* SYHMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHMainViewController.m; sourceTree = "<group>"; };
+		1B35EEE718682383004781FA /* SYHChoosePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHChoosePhotoViewController.h; sourceTree = "<group>"; };
+		1B35EEE818682383004781FA /* SYHChoosePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHChoosePhotoViewController.m; sourceTree = "<group>"; };
+		1B35EEEA186A5176004781FA /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Storyboard.storyboard; path = ../../../.Trash/Storyboard.storyboard; sourceTree = "<group>"; };
+		1B35EEEC186D6127004781FA /* SYHEditFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SYHEditFirstViewController.h; sourceTree = "<group>"; };
+		1B35EEED186D6127004781FA /* SYHEditFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SYHEditFirstViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +120,13 @@
 			children = (
 				1B35EEC21867EC11004781FA /* SYHAppDelegate.h */,
 				1B35EEC31867EC11004781FA /* SYHAppDelegate.m */,
+				1B35EEE41867F0DE004781FA /* SYHMainViewController.h */,
+				1B35EEE51867F0DE004781FA /* SYHMainViewController.m */,
+				1B35EEE718682383004781FA /* SYHChoosePhotoViewController.h */,
+				1B35EEE818682383004781FA /* SYHChoosePhotoViewController.m */,
+				1B35EEEC186D6127004781FA /* SYHEditFirstViewController.h */,
+				1B35EEED186D6127004781FA /* SYHEditFirstViewController.m */,
+				1B35EEEA186A5176004781FA /* Storyboard.storyboard */,
 				1B35EEC51867EC12004781FA /* Images.xcassets */,
 				1B35EEBA1867EC11004781FA /* Supporting Files */,
 			);
@@ -222,6 +240,7 @@
 			files = (
 				1B35EEBE1867EC11004781FA /* InfoPlist.strings in Resources */,
 				1B35EEC61867EC12004781FA /* Images.xcassets in Resources */,
+				1B35EEEB186A5176004781FA /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B35EEC01867EC11004781FA /* main.m in Sources */,
+				1B35EEEE186D6127004781FA /* SYHEditFirstViewController.m in Sources */,
+				1B35EEE61867F0DE004781FA /* SYHMainViewController.m in Sources */,
 				1B35EEC41867EC11004781FA /* SYHAppDelegate.m in Sources */,
+				1B35EEE918682383004781FA /* SYHChoosePhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
